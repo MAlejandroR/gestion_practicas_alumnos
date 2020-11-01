@@ -1,1 +1,0 @@
-No he sido capaz de sacar el codigo que permite adivinar el número, no obstante entrego lo que tengo, y seguire estudiando y comprobando el mnual de php, para poder completarlo.
