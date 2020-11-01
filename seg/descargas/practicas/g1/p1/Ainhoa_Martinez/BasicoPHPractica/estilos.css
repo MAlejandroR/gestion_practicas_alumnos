@@ -1,0 +1,78 @@
+/*
+    Author     : ainhoa
+*/
+
+/*General*/
+
+body {
+    background-color: #f9f5fc;
+}
+/*Estilos para index.php*/
+h1 {
+    color: #ac1f5b;
+}
+
+fieldset {
+    background-color: #e7d6f2;
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+    border-radius: 8px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #ac1f5b;
+}
+
+/* Estilos para páginas de enlaces*/
+
+div {
+    /*background-color: #fbe5b3;*/
+    background-color: #e7d6f2;
+    margin: 0 auto;
+}
+
+#enunciado {
+    width: 50%;
+    margin: 0 auto;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+}
+
+#variables, #constantes, #asignacion, #seleccion, #ternario, #iteracion, #funcion {
+    width: 50%;
+    margin: 0 auto;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+}
+
+#volver {
+    width: 50%;
+    margin: 0 auto;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+}
+
+table, td, th {
+    border: 1px solid #000;
+    border-collapse: collapse;
+    padding: 5px;
+}
+
+.titulo{
+    color: #701ba7;
+}
+
+.variable {
+    font-weight: bold;
+    color: #701ba7;
+}
