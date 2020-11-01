@@ -1,0 +1,54 @@
+@charset "utf-8";
+form {
+	width: 500px;
+	margin-right: auto;
+	margin-left: auto;
+}
+#principal {
+	width: 750px;
+	margin-right: auto;
+	margin-left: auto;
+}
+#cabecera {
+	height: 75px;
+	background-color: #000;
+	margin-bottom: 50px;
+	margin-top: 0px;
+}
+
+#cabecera h1 {
+	color: #FFF;
+	text-align: center;
+	margin-bottom: 15px;
+	margin-top: 15px;
+}
+#pie {
+	font-size: 10px;
+	color: #FFF;
+	background-color: #000;
+	height: 30px;
+	padding-top: 10px;
+	text-align: center;
+	margin-top: 25px;
+}
+
+#principal form fieldset h1 {
+	font-size: 24px;
+	color: #930;
+}
+#principal form fieldset {
+	color: #333;
+	border-top-color: #900;
+	border-right-color: #900;
+	border-bottom-color: #900;
+	border-left-color: #900;
+	padding: 15px;
+}body {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 14px;
+	color: #333;
+}
+#enganno {
+	color: #900;
+	text-align: center;
+}

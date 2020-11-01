@@ -1,0 +1,33 @@
+<?php
+       $numero = filter_input(INPUT_GET, 'num');
+        
+        ?>  
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tabla de multiplIcar</title>
+    </head>
+    <body>
+       <h1>selecciona un intervalo: </h1>
+        <p>ELIGE UN NUMERO DE LOS 3:</p> <br>
+
+        <form action="jugar.php" method="GET">
+        
+        1-30<input type="radio" name="num" value="30">
+            <br/>
+			1-60<input type="radio" name="num" value="60">
+            <br/>
+			1-90<input type="radio" name="num" value="90">
+            <br/>
+            <input TYPE="submit" VALUE="Empezar" id='boton'/>
+</form>
+<?php
+    if isset($_GET['boton']){
+        
+        header(Location:jugar.php?num=$numero);
+    }
+?>
+        <h2>piensa un numero que este entre el intervalo seleccionado</h2>
+        <p>cada vez que la aplicacion proponga un numero deberas indicarle si es mayor, menor o es el número que tenias en mente</p>
+    </body>
+</html>

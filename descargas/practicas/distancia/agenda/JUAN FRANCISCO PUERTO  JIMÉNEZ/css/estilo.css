@@ -1,0 +1,61 @@
+fieldset{
+    background-color: #aeb6bf;
+    width: 400px;
+    height: 150px;
+    float: left;
+    margin-left: 20px;
+}
+legend{
+    font-size: 20px;
+    font-style: italic;
+    color: #000066;
+    font-weight: bold;
+}
+form{
+    padding: 10px;
+}
+label{
+    color: #000066;
+    margin: 3px;
+    font-size: 15px;
+    font-weight: bold;
+}
+input{
+    margin: 5px;
+}
+div{
+    width: 825px;
+    background-color: #aeb6bf;
+    margin-left: 500px;
+    margin-top: 30px;
+    height: 160px;
+}
+div h2{
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    font-size: 30px;
+    color: #000066;
+    font-weight: bold;
+}
+h1{
+    text-align: center;
+    background-color: #5d6d7e;
+    color: #ff8c00;
+    padding: 5px;
+    margin-right: 20px;
+}
+h4{
+    text-align: center;
+    color: #000066;
+    padding: 5px;
+    margin-right: 20px;
+}
+li{
+    color: #000066;
+    padding: 5px;
+    margin-right: 20px;
+}
+p{
+    color: red;
+}

@@ -1,0 +1,34 @@
+#contenedor{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+#error{
+    color: red;
+}
+
+table{
+    border-collapse:collapse;
+    background-color: powderblue;
+}
+
+td{
+    padding: 15px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+#operacion{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: lemonchiffon;
+}
+
+#reglas{
+    background-color: #a8d3e8;
+}
+

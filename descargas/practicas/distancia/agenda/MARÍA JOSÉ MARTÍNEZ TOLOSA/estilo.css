@@ -1,0 +1,47 @@
+body{
+    margin: 8px;
+    font-weight: 16px;
+}
+header {
+    
+    color: #FF8C00;
+    height: 60px;
+    font-size: 40px;
+    
+    background: #5D6D7E;
+    text-align: center;
+}
+
+fieldset{
+    background: #AEB6BF;
+    width: 40%;
+     max-width: 440px;
+    margin: 10px;
+    padding: 10px;
+}
+.listado_contactos{
+    width: 55%;
+    max-width: 520px;
+    min-height: 130px;
+    float: right;
+    background: #AEB6BF;
+    
+    margin: 10px;
+    text-align: center;
+}
+
+form{
+    float: left; 
+     color: #000000;
+     
+     
+}
+th, td {
+   border: 1px solid #000;
+   
+}
+.center{
+    color: #00008B;
+   
+    margin: 30px;
+}

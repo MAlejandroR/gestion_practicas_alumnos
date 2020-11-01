@@ -1,0 +1,56 @@
+#contenedor{
+    width: 90%;
+    margin: auto;
+}
+
+h2{
+   padding: 10px;
+   margin: 20px;
+   color: purple;
+}
+
+fieldset{
+    width: 30%;
+    float:left;
+    padding: 10px;
+    margin: 20px;
+    background-color: lightgoldenrodyellow;
+}
+
+#ayuda{
+    width: 50%;
+    float: left;
+    padding: 10px;
+    margin: 20px;
+    background-color: lightgoldenrodyellow;
+}
+
+table{
+    text-align: center;
+    margin: auto;
+}
+
+#tabla{
+    width: 40%;
+    float: left;
+    padding: 10px;
+    margin: 20px;
+    background-color: lightgoldenrodyellow;
+}
+
+legend{
+    font-size: 1.3em;
+    color: purple;
+    font-weight: bold;
+}
+
+label{
+    font-weight: bold;
+    font-size : 1em;
+    margin: 0.65em;
+}
+
+#texhelp{
+    font-size : 1em;
+}
+

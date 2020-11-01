@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+
+REQUISITOS
+    -Seleccionar una clave aleatoriamente
+    -Mostrar/ocultar la clave
+    -Informar al usuario tanto del numero de intentos como de sus errores
+    -Permitir la opcion de reiniciar
+    -Avisar al jugador cuando ha perdido/ganado la partida
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <link rel="stylesheet" href="estilo.css" type="text/css"/>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+            <fieldset id="ayuda">
+            <legend>Reglas del juego Mastermind</legend>
+            <div id=texhelp> La máquina construirá de forma aleatoria una <strong>Clave de 4 colores</strong>.</div>
+            <div id=texhelp> Los colores pueden ser <strong>Azul, Rojo, Naranja, Verde, Violeta, Amarillo, Marron y Rosa</strong>.</div>
+            <div id=texhelp> El usuario deberá adivinar la combinación de colores</div>
+            <div id=texhelp> La clave puede ser mostrada en cualquier momento mediante el botón <strong>mostrar</strong></div>
+            <div id=texhelp> La máquina irá informando tanto de los colores como de las posiciones acertadas</label></div>
+            <div id=texhelp> <strong>14 jugadas permitidas como máximo</strong></label></div>
+            <form action="index.php" method="POST">
+                <input type="submit" name="submit" value="Comenzar">
+            </form>
+        </fieldset>
+    </body>
+</html>

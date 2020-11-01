@@ -1,0 +1,16 @@
+#contenedor{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#formulario{
+    background-color:  #8ff0fa;
+    width: 50%;
+}
+
+#agenda{
+    background-color:  #8ff0fa;
+    width: 50%;
+}
+

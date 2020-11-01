@@ -1,0 +1,13 @@
+28-10-2018 17:05:45 . El usuario ha dicho que el número es MENOR. Lleva 1 intentos
+28-10-2018 17:05:47 . El usuario ha dicho que el número es MENOR. Lleva 2 intentos
+28-10-2018 17:05:48 . El usuario ha dicho que el número es MENOR. Lleva 3 intentos
+28-10-2018 17:05:50 . El usuario ha dicho que el número es MENOR. Lleva 4 intentos
+28-10-2018 17:05:52 . El usuario ha dicho que el número es MAYOR. Lleva 5 intentos
+28-10-2018 17:05:54 . El usuario ha dicho que el número es MENOR. Lleva 6 intentos
+28-10-2018 17:05:55 . El usuario ha dicho que el número es MENOR. Lleva 7 intentos
+28-10-2018 17:05:57 . El usuario ha dicho que el número es MAYOR. Lleva 8 intentos
+28-10-2018 17:05:58 . El usuario ha dicho que el número es MENOR. Lleva 9 intentos
+28-10-2018 17:06:00 . El usuario ha dicho que el número es CORRECTO!! Lleva 9 intentos
+28-10-2018 17:07:12 . El usuario ha dicho que el número es CORRECTO!! Lleva 0 intentos
+28-10-2018 17:07:31 . El usuario ha dicho que el número es MAYOR. Lleva 1 intentos
+28-10-2018 17:07:35 . El usuario ha dicho que el número es MENOR. Lleva 1 intentos

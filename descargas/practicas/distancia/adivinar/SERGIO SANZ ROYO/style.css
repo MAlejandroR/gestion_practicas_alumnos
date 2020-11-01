@@ -1,0 +1,25 @@
+body {
+    margin: 0 auto;
+    max-width: 900px;
+    padding: 0 1.5em;
+}
+
+a {
+    color: slategray;
+}
+
+label {
+    display: block;
+}
+
+.buttons {
+    margin-top: .5em;
+}
+
+.button {
+    padding: .25em 1em;
+}
+
+.text--gray {
+    color: slategray;
+}

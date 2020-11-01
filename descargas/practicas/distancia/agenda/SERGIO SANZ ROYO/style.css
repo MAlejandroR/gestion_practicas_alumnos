@@ -1,0 +1,23 @@
+body {
+    margin: 0 auto;
+    max-width: 900px;
+    padding: 0 1.5em;
+}
+
+.buttons {
+    margin-top: .5em;
+}
+
+.button {
+    padding: .25em 1em;
+}
+
+fieldset,
+.error {
+    margin: 0 2px 1.5rem;
+}
+
+.error {
+    background-color: #FFCDD2;
+    padding: .75em 1.5em;
+}
