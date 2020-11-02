@@ -1,0 +1,8 @@
+•Xampp:es un paquete de software libre, que consiste principalmente en el sistema de gestión de bases de datos MySQL, el servidor web Apache y los intérpretes para lenguajes de script PHP y Perl
+•Wampp:se refiere a una pila de soluciones para el sistema operativo Microsoft Windows, creada por Romain Bourdon y que consiste en el servidor web Apache, OpenSSL para soporte SSL, base de datos MySQL y php
+•Lampp:es el acrónimo usado para describir un sistema de infraestructura de internet que usa como herramientas:Linux, Apache, MySQL/MariaDB y Php
+•Mean: es un framework o conjunto de subsistemas de software para el desarrollo de aplicaciones, y páginas web dinámicas, que están basadas, cada una de estas en el popular lenguaje de programación conocido como JavaScript.
+•Lemp:framework formado por Linux, nGix, MySQL y php
+•Media:
+•Ampps:es una pila de soluciones de Apache, MySQL, MongoDB, PHP, Perl y Python
+•BitNami:s una biblioteca de instaladores o paquetes de software para aplicaciones web y pilas de soluciones, así como dispositivos virtuales.

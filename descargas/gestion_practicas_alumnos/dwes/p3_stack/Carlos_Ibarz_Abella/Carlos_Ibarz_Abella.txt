@@ -1,0 +1,15 @@
+Xampp:es una de las mejores distribuciones de Apache que ayuda a los desarrolladores a crear un servidor web local con fines de prueba e implementación. Fue diseñado para ser la forma más fácil de instalar y ejecutar un servidor de desarrollo.
+
+Wampp:se refiere a una pila de soluciones para el sistema operativo Microsoft Windows que consiste en el servidor web Apache, OpenSSL para soporte SSL, base de datos MySQL y php.
+
+Lampp:es el acrónimo usado para describir un sistema de infraestructura de internet que usa como herramientas:Linux, Apache, MySQL/MariaDB y Php.
+
+Mean: es un framework o conjunto de subsistemas de software para el desarrollo de aplicaciones, y páginas web dinámicas, que están basadas, cada una de estas en el popular lenguaje de programación conocido como JavaScript.
+
+Lemp:Es un framework formado por L significa Linux, E es para Nginx (engine-x), M es para MariaDB o MySQL, y P significa PHP
+
+Media:a pila media es una pila de JavaScript de código abierto que puede utilizar para crear aplicaciones web modernas rápidas, robustas y fáciles de mantener listas para producción.
+
+Ampps:AMPPS es una combinación de la pila LAMP (Linux), WAMP (Windows) y MAMP (Macintosh) de Softaculous que consta de Apache, MySQL, MongoDB, PHP (también Perl y Python).
+
+BitNami:s una biblioteca de instaladores o paquetes de software para aplicaciones web y pilas de soluciones.

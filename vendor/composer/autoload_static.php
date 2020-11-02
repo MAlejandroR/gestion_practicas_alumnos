@@ -20,29 +20,11 @@ class ComposerStaticInit2e11a3fc7a8ecaff238f648b7e7c46d1
         ),
     );
 
-    public static $prefixesPsr0 = array (
-        'M' => 
-        array (
-            'MrRio' => 
-            array (
-                0 => __DIR__ . '/..' . '/mrrio/shellwrap/src',
-            ),
-        ),
-        'B' => 
-        array (
-            'Boris' => 
-            array (
-                0 => __DIR__ . '/..' . '/d11wtq/boris/lib',
-            ),
-        ),
-    );
-
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit2e11a3fc7a8ecaff238f648b7e7c46d1::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit2e11a3fc7a8ecaff238f648b7e7c46d1::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit2e11a3fc7a8ecaff238f648b7e7c46d1::$prefixesPsr0;
 
         }, null, ClassLoader::class);
     }

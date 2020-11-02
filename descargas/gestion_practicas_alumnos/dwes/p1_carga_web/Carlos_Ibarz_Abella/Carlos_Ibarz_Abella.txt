@@ -1,0 +1,10 @@
+PROCESO DE COMUNICACIÓN CLIENTE/SERVIDOR 
+El navegador se encarga de entrar en contacto con servidores web distribuidos por todo el mundo, consulta allí los paquetes de datos almacenados y entrega, y a traves de estos muestra una página web en la pantalla del dispositivo.
+
+Ejecucion de script en Servidor:
+En el servidor entra en juego el desarrollo de páginas web y de aplicaciones web. Dentro del desarrollo web, está la utilización de scripts que ejecuta el servidor web, con ayuda de un lenguaje de programación adecuado, cuando un cliente quiere acceder al contenido. Aunque el usuario entra al proyecto gracias a páginas HTML, el código fuente de los scripts permanece oculto.
+Ejemplos lenguajes servidor: Javascript, php, phyton…
+
+Ejecucion de script en Cliente:
+En cliente, a diferencia de los lenguajes del servidor no es el servidor el que ejecuta y procesa los script, sino el cliente que lo solicita. Con esta finalidad, los scripts se incluyen en el documento HTML.
+Ejemplos lenguajes cliente: Html, css, jsvascript….

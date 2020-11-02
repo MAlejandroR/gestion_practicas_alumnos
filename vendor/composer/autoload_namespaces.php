@@ -6,6 +6,4 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'MrRio' => array($vendorDir . '/mrrio/shellwrap/src'),
-    'Boris' => array($vendorDir . '/d11wtq/boris/lib'),
 );

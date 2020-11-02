@@ -11,7 +11,7 @@ function mostrar_errores()
     error_reporting(E_ALL);
 }
 Log::init_file();
-mostrar_errores();
+//mostrar_errores();
 
 $p = $_POST['practica'] ?? "p1";
 $g = $_POST['grupo'] ?? "g1";
@@ -26,8 +26,9 @@ if (isset($_POST['submit'])) {
             Log::write("Opción subir y descomprimir ficheros");
             $fichero = $_FILES['fichero'];
             Log::write("Fichero".$fichero['name']);
+            echo "<h1>Antes de utilidades</h1>";
             $practica = new Utilidades\Practica($fichero, $g, $p);
-     //       echo $practica;
+            echo "<h1>Después de  utilidades</h1>";
             break;
         case "Descargar":
             //Comprimo toda la carpeta descargas en un zip

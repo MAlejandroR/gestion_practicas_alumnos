@@ -29,33 +29,36 @@ class Practica
      */
     public function __construct(array $f, string $g, string $p)
     {
+
         //Asignamos valores a los atributos (grupo, práctica y fichero zip con la práctica)
         $this->fichero = $f;
         $this->grupo = $g;
         $this->practica = $p;
         $this->dir = "./descargas/gestion_practicas_alumnos/$this->grupo/$this->practica/";
-        $datos_fichero = print_r ($f, true);
+        $datos_fichero = print_r($f, true);
 
         $msj = "Grupo $g\n - Práctica $p\n - Fichero zip con las prácticas $datos_fichero<br />\n dir $this->dir<br />\n";
 
         //Creamos el directorio para guardar las prácticas .descargas/gestion_practicas_alumnos/$grupo/$gestion_practicas_alumnos
-        $msj .= $this->crea_directorios ();
+        $msj .= $this->crea_directorios();
+
+
 
         //Copia el fichero zip con la práctica al directorio creado
-        $msj .= $this->copia_practica ();
+        $msj .= $this->copia_practica();
 
 
         //Descomprimir el fichero zip con los diferentes ficheros
         //uno por cada alumno
         // var_dump($this->dir);
         // var_dump($this->dir.$this->practica.".zip");
-        $msj .= $this->descomprime_zip ($this->dir, "$this->dir$this->practica.zip");
+        $msj .= $this->descomprime_zip($this->dir, "$this->dir$this->practica.zip");
 
 
-        $msj .= $this->dir_practica_alumno ();
+        $msj .= $this->dir_practica_alumno();
         //$this->msj .= "<H2>Fin En construct</h2>";
         $this->msj = $msj;
-        Log::write ($this->msj);
+        Log::write($this->msj);
 
     }
 
@@ -69,10 +72,10 @@ class Practica
     {
         $msj = "En método  crea_directorios<br />\n";
 
-        if (file_exists ($this->dir))
+        if (file_exists($this->dir))
             $msj .= "El directorio $this->dir ya existe <br />\n";
         else {
-            $action = mkdir ($this->dir, 0777, true);
+            $action = mkdir($this->dir, 0777, true);
             $msj .= "El directorio <strong>$this->dir </strong>\n<br />";
             $msj .= $action ? " se ha creado <strong>Correctamente</strong>" : "<strong> ERROR!! No se ha podido crear</strong>";
             $msj .= "<hr />\n";
@@ -82,6 +85,20 @@ class Practica
 
     }
 
+    private function get_string_error_download()
+    {
+        $error = [
+            0 => 'There is no error, the file uploaded with success',
+            1 => 'The uploaded file exceeds the upload_max_filesize directive in php.ini',
+            2 => 'The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form',
+            3 => 'The uploaded file was only partially uploaded',
+            4 => 'No file was uploaded',
+            6 => 'Missing a temporary folder',
+            7 => 'Failed to write file to disk.',
+            8 => 'A PHP extension stopped the file upload.'
+        ];
+        return $error[$this->fichero['error']];
+    }
     /**
      * @source Copia el zip con toda la práctica al directorio establecido
      *         Mantiene el nombre del fichero descargado
@@ -93,51 +110,61 @@ class Practica
         $msj .= "Método Practica->copiar_practica()\n";
         $msj .= "----------------------------------\n";
 
-        $this->borra_dir ($this->dir);
+        $this->borra_dir($this->dir);
+
+
 
 
         $file = $this->fichero;
-        $msj .= "valor de file " . print_r ($file, true) . "<br />\n";
+
+        $msj .= "valor de file " . print_r($file, true) . "<br />\n";
+
+
         $source = $file['tmp_name'];
         $destino = "$this->dir$this->practica.zip";
         $msj .= "Se va a copiar $source en $destino <br />\n";
-        if (move_uploaded_file ($source, $destino))
-            $msj .= "Se ha copiado correctamente $destino <br />";
-        else
-            $msj .= "Error copiando $destino <br />";
+
+        if (move_uploaded_file($source, $destino))
+            $msj .= "Se ha copiado correctamente $destino <br />\n";
+        else {
+            $msj .= "\nError copiando $destino <br />\n";
+            $msj .= "\nError de descarga del fichero" . $this::get_string_error_download()."<br />\n";
+        }
+
+
         $msj .= "Fin método Practica->copiar_practica()--------------------------\n";
-        Log::write ($msj);
+        Log::write($msj);
         return $msj;
     }
 
+    /**
+     * @param $dir se borra el contenido de un dir
+     * Se usas en caso de que la práctica ya se hubiera subido previamente
+     * Se eliminará lo que había
+     */
     private function borra_dir($dir)
     {
         $msj = "----------------------------------\n";
         $msj .= "Método Practica->borrar_dir($dir)\n";
         $msj .= "----------------------------------\n";
-
-        $ficheros = scandir ($dir);
-
-        if (sizeof ($ficheros) > 2) {
-
-
-            $msj .= "Se borrarán del Directorio $dir " . (count ($ficheros) - 2) . " ficheros\n";
+        $ficheros = scandir($dir);
+        if (sizeof($ficheros) > 2) {
+            $msj .= "Se borrarán del Directorio $dir " . (count($ficheros) - 2) . " ficheros\n";
             foreach ($ficheros as $file) {
-
-                if (($file == ".") OR ($file == ".."))
+                if (($file == ".") or ($file == ".."))
                     continue;
-                if (is_dir ("$dir$file")) {
+                if (is_dir("$dir$file")) {
                     echo "<h1>$file es dir</h1>";
-                    if (count (scandir ("$dir$file")) == 2) {
+                    if (count(scandir("$dir$file")) == 2) {
                         echo "<h1>$file es dir y está vacío</h1>";
-                        rmdir ("$dir$file");
+                        rmdir("$dir$file");
                         echo "<h1>He borrado $dir$file</h1>";
                     }
-                    $this->borra_dir ("$dir$file/");
+                    $this->borra_dir("$dir$file/");
                 } else {
                     echo "<h1>Voy a borrar $dir$file </h1>";
 
-                    if (unlink ("$dir$file")) {
+                    if (unlink("$dir$file")) {
                         echo "<h1>$dir$file Borrado</h1>";
                         $msj .= "fichero $file BORRADO\n";
 
@@ -148,13 +175,11 @@ class Practica
                     }
                 }
             }
-
         } else {
             $msj .= "Directorio $dir vacío, no se borra nada\n";
         }
         $msj .= "Fin borrar_dir-------------------------------------------\n";
-        Log::write ($msj);
-        exit;
+        Log::write($msj);
     }
 
     /**
@@ -171,16 +196,16 @@ class Practica
         $msj .= "----------------------------------\n";
 
         $zip = new ZipArchive();
-        $zip->open ("$fichero");
-        if ($zip->extractTo ("$dir")) {
-            unlink ($fichero);//Elininamos el fichero que hemos descomprimido
+        $zip->open("$fichero");
+        if ($zip->extractTo("$dir")) {
+            unlink($fichero);//Elininamos el fichero que hemos descomprimido
             $msj .= "Se ha descomprimido correctamente $fichero\n";
             $msj .= "Se ha eliminado el fichero $fichero\n";
         } else
             $msj .= "Error  descomprimiendo $fichero";
         $msj .= "Fin Método Practica->descomprime_zip($dir, $fichero)-------------------\n";
         $msj .= "<hr />\n";
-        Log::write ("msj");
+        Log::write("msj");
 
         return $msj;
 
@@ -203,30 +228,30 @@ class Practica
         //Obtenemos todos los ficheros del directorio.
         $msj = "En método dir_practica_alumno <br />\n";
 
-        $practicas = dir ($this->dir);
+        $practicas = dir($this->dir);
 
 
-        while (false !== ($file = $practicas->read ())) {
+        while (false !== ($file = $practicas->read())) {
             if ($file != '.' && $file != '..') {
-                $nombre = $this->get_name ($file);
-                $extension = $this->get_extension ($file);
+                $nombre = $this->get_name($file);
+                $extension = $this->get_extension($file);
                 $msj .= "Fichero <strong>$file<strong><br />\n";
                 $msj .= "Leído fichero <strong> $nombre</strong><br />\n";
                 $msj .= "Extensión <strong>$extension<strong><br />\n";
                 //Si no existe el dir, lo creo
-                if (!file_exists ("$this->dir/$nombre")) {
-                    $m = mkdir ("$this->dir/$nombre", 0777, true);
+                if (!file_exists("$this->dir/$nombre")) {
+                    $m = mkdir("$this->dir/$nombre", 0777, true);
                     $msj .= "Mkdir retorno -$m-<br />\n";
                 }
-                if (file_exists ("$this->dir/$file")) {
-                    $r = rename ("$this->dir/$file", "$this->dir/$nombre/$nombre.$extension");
+                if (file_exists("$this->dir/$file")) {
+                    $r = rename("$this->dir/$file", "$this->dir/$nombre/$nombre.$extension");
                     $msj .= "rename retorno -$r-<br />\n";
                 }
 
 
                 $msj .= "Voy a descomprimir <strrong>$this->dir$nombre/$nombre.$extension</strong><br />\n";
 
-                $msj .= $this->descomprime ("$this->dir$nombre/$nombre.$extension");
+                $msj .= $this->descomprime("$this->dir$nombre/$nombre.$extension");
 
             }
         }
@@ -235,20 +260,20 @@ class Practica
 
     private function get_name($file)
     {
-        $name = substr ($file, 0, strpos ($file, "_"));
-        $name = str_replace (" ", "_", $name);
+        $name = substr($file, 0, strpos($file, "_"));
+        $name = str_replace(" ", "_", $name);
         return $name;
     }
 
     private function get_extension($file)
     {
         //Si fichero viene con ruta habrá que quitarla
-        $pos = strripos ($file, "/");
+        $pos = strripos($file, "/");
         if ($pos === FALSE)
-            $extension = substr ($file, strpos ($file, ".") + 1);
+            $extension = substr($file, strpos($file, ".") + 1);
         else
-            $file = substr ($file, $pos);
-        $extension = substr ($file, strpos ($file, ".") + 1);
+            $file = substr($file, $pos);
+        $extension = substr($file, strpos($file, ".") + 1);
         return $extension;
     }
 
@@ -257,35 +282,35 @@ class Practica
         $msj = "<hr />";
         $msj .= "Estoy en método descomprimer con fichero <strong>$fichero</strong><br />\n";
 
-        $extension = $this->get_extension ($fichero);
+        $extension = $this->get_extension($fichero);
 
         $msj .= "Tengo la extensión <strong>$extension</strong><br />\n";
         switch ($extension) {
             case 'zip':
                 $msj .= "En caso zip <br />\n";
-                $dir = substr ($fichero, 0, strripos ($fichero, '/'));
+                $dir = substr($fichero, 0, strripos($fichero, '/'));
                 $msj .= "con directorio $dir<br />\n";
-                $msj .= $this->descomprime_zip ($dir, $fichero);
-                var_dump ($msj);
+                $msj .= $this->descomprime_zip($dir, $fichero);
+                var_dump($msj);
                 break;
             case 'tar':
 
                 $msj .= "En caso tar <br />\n";
-                $dir = substr ($fichero, 0, strripos ($fichero, "/"));
+                $dir = substr($fichero, 0, strripos($fichero, "/"));
                 $msj .= "Voy a ejecutar tar -xvf    $fichero -C $dir<br />";
 
-                $msj .= "shell devuelve -" . shell_exec ("tar xvf   $fichero -C $dir") . "-<br />";
+                $msj .= "shell devuelve -" . shell_exec("tar xvf   $fichero -C $dir") . "-<br />";
                 break;
             case'tar.xz':
                 $msj .= "En caso rarito tar.xz <br />\n";
-                $msj .= shell_exec ("tar Jxvz $fichero");
+                $msj .= shell_exec("tar Jxvz $fichero");
                 break;
             case 'rar':
                 $msj .= "En caso rar <br />\n";
-                $dir = substr ($fichero, 0, strripos ($fichero, "/"));
+                $dir = substr($fichero, 0, strripos($fichero, "/"));
                 $msj .= "Voy a ejecutar unrar xy $fichero  $dir<br />";
 
-                $msj .= "shell devuelve -" . shell_exec ("unrar x $fichero $dir") . "-<br />";
+                $msj .= "shell devuelve -" . shell_exec("unrar x $fichero $dir") . "-<br />";
                 break;
 
         }
@@ -305,7 +330,7 @@ class Practica
 
 
         $p = new PharData($fichero);
-        $p->decompressFiles ();
+        $p->decompressFiles();
 
 
         return $msj;
@@ -316,7 +341,7 @@ class Practica
     private function descomprimer_tar($fichero)
     {
         $p = new PharData("$fichero");
-        $msj = $p->decompress ();
+        $msj = $p->decompress();
         return $msj;
     }
 
