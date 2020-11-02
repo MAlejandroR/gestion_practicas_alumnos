@@ -11,7 +11,7 @@ function mostrar_errores()
     error_reporting(E_ALL);
 }
 Log::init_file();
-
+mostrar_errores();
 
 $p = $_POST['practica'] ?? "p1";
 $g = $_POST['grupo'] ?? "g1";

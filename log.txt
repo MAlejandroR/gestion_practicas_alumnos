@@ -1,9 +1,9 @@
-10-05-2020 18:458:46
+02-11-2020 10:008:06
 Opción subir y descomprimir ficheros
-FicheroFPEN_DAW_DWES-Implementar un CRUD básico-107743 (1).zip
+FicheroDWSERV-Arquitecturas-73665.zip
 ----------------------------------
-Método Practica->borrar_dir(./descargas/practicas/distancia/CRUD/)
+Método Practica->borrar_dir(./descargas/gestion_practicas_alumnos/distancia/agenda/)
 ----------------------------------
-Directorio ./descargas/practicas/distancia/CRUD/ vacío, no se borra nada
+Directorio ./descargas/gestion_practicas_alumnos/distancia/agenda/ vacío, no se borra nada
 Fin borrar_dir-------------------------------------------
 
